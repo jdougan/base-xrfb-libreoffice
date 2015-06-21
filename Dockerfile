@@ -27,6 +27,10 @@ EXPOSE 5900
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive \
 	apt-get install -y \
+	x11vnc \
+	xbase-clients \
+	xdg-utils \
+	xvfb \
 	libreoffice \
 	&& rm -rf /var/lib/apt/lists/*
 
