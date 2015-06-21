@@ -3,10 +3,10 @@
 #
 #
 #
-
 FROM phusion/baseimage:0.9.16
 
 MAINTAINER John Dougan <void.random@gmail.com>
+#derived from the dockerfiles by jfrazetta
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
