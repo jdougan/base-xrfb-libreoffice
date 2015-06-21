@@ -31,6 +31,7 @@ RUN apt-get update \
 	xbase-clients \
 	xdg-utils \
 	xvfb \
+	ratpoison \
 	libreoffice \
 	&& rm -rf /var/lib/apt/lists/*
 
