@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /usr/bin/Xvfb :1 -screen 0 ${XRFBRESX}x${XRFBRESY}x${XRFBDEPTH}

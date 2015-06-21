@@ -1,0 +1,9 @@
+#!/bin/bash
+# -viewpasswd string  - need -passwd specified 
+# -passwdfile  
+#  -usepw
+#  -storepasswd
+#
+#
+sv start 00xvfb || exit 1
+exec /usr/bin/x11vnc -display :1 -rfbauth /vnc/vncpasswd -shared -wait 5 -forever
