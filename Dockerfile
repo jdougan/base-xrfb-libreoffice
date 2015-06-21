@@ -33,13 +33,18 @@ RUN apt-get update \
 	xdg-utils \
 	xvfb \
 	ratpoison \
-	libreoffice \
-	&& rm -rf /var/lib/apt/lists/*
+	&& echo "apt-get done"
 
-RUN mkdir -p  /usr/share/xsessions/
-COPY kiosk.desktop /usr/share/xsessions/
-COPY run-kiosk.sh /usr/share/xsessions/
-# RUN /usr/lib/lightdm/lightdm-set-defaults -s kiosk
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# === Everything above this line is going to be in my own base eventually. =====	
+
+RUN apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive \
+	apt-get install -y \
+	libreoffice \
+	&& echo "apt-get done"
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -1,9 +1,8 @@
 #!/bin/bash
-# -viewpasswd string  - need -passwd specified 
-# -passwdfile  
-#  -usepw
-#  -storepasswd
 #
 #
 sv start 00xvfb || exit 1
-exec ratpoison --display :1
+export HOME="/home/user"
+export DISPLAY=":1"
+export USER="user"
+exec sudo -E -u $USER ratpoison --display :1

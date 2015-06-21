@@ -5,6 +5,7 @@ all:
 
 
 build:
+	chmod +x service.d/*/run
 	sudo docker build -t jdougan/base-xrfb-libreoffice:1 .
 
 run:
