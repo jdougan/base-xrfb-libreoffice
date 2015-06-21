@@ -39,7 +39,7 @@ RUN apt-get update \
 RUN mkdir -p  /usr/share/xsessions/
 COPY kiosk.desktop /usr/share/xsessions/
 COPY run-kiosk.sh /usr/share/xsessions/
-RUN /usr/lib/lightdm/lightdm-set-defaults -s kiosk
+# RUN /usr/lib/lightdm/lightdm-set-defaults -s kiosk
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
