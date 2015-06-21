@@ -6,7 +6,8 @@ rm -rf  ${XRFBSESSIONDIR}
 mkdir -p  ${XRFBSESSIONDIR}
 echo -n 'XRFBPASSWD=' > ${XRFBSESSIONDIR}/xrfbpasswd
 echo 'tea41dragon' >> ${XRFBSESSIONDIR}/xrfbpasswd
-if ($# = 1)
+if [ $# -eq 1 ]
+then
 echo -n 'XRFBURI=' > ${XRFBSESSIONDIR}/xrfbpasswd
 echo $1 >> ${XRFBSESSIONDIR}/xrfbpasswd
 fi
