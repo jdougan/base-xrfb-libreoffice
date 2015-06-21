@@ -6,4 +6,4 @@
 #
 #
 sv start 00xvfb || exit 1
-exec ratpoison 
+exec ratpoison --display :1
