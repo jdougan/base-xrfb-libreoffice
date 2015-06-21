@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Browser Mode
+Comment=Kiosk desk Session
+Exec=/usr/share/xsessions/run_kiosk.sh
+Type=Application`

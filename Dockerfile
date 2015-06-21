@@ -7,6 +7,7 @@ FROM phusion/baseimage:0.9.16
 
 MAINTAINER John Dougan <void.random@gmail.com>
 #derived from the dockerfiles by jfrazetta
+# https://askubuntu.com/questions/193130/what-is-the-most-basic-window-manager-for-ubuntu-that-can-be-used-to-display-a-s
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
@@ -34,6 +35,11 @@ RUN apt-get update \
 	ratpoison \
 	libreoffice \
 	&& rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p  /usr/share/xsessions/
+COPY kiosk.desktop /usr/share/xsessions/
+COPY run-kiosk.sh /usr/share/xsessions/
+RUN /usr/lib/lightdm/lightdm-set-defaults -s kiosk
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
