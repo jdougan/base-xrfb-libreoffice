@@ -4,7 +4,7 @@ export XRFBSESSIONSDIR=~/xrfb-sessions/
 export XRFBSESSIONDIR=${XRFBSESSIONSDIR}/${XRFBSESSIONID}
 rm -rf  ${XRFBSESSIONDIR}
 mkdir -p  ${XRFBSESSIONDIR}
-echo -n 'environment=' > ${XRFBSESSIONDIR}/environment
+echo -n 'XRFBPASSWD=' > ${XRFBSESSIONDIR}/environment
 echo 'tea41dragon' >> ${XRFBSESSIONDIR}/environment
 if [ $# -eq 1 ]
 then
