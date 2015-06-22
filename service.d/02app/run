@@ -3,4 +3,4 @@ sv start 01x11vnc || exit 1
 export HOME="/home/user"
 export DISPLAY=":1"
 export USER="user"
-exec sudo -E -u $USER /usr/bin/libreoffice
+exec sudo -E -u $USER /usr/bin/libreoffice ${XFBURI}
