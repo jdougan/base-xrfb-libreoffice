@@ -18,4 +18,4 @@ cleanc:
 	docker ps -a | grep 'Exited' | awk -f tools/first.awk | xargs --no-run-if-empty docker rm -v
 
 gcim:
-	docker ps -a | grep 'dsfsd' | awk '{print \$1}' | xargs --no-run-if-empty docker rmi  
+	docker ps -a | grep 'dsfsd' | awk -f tools/first.awk | xargs --no-run-if-empty docker rmi  
